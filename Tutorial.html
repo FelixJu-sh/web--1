@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自定义乐谱教程</title>
+    <style>
+		body{
+			background-color:#f2f2f2;
+			width: 1280px;
+		}
+		#menu{
+			width: 200px;
+			height: 380px;
+            top:30%;
+			border-style:solid;
+			position:fixed;
+			left:50px;
+			margin-left:-50px;
+            background-color:#F5F5F5;
+            font-size:larger;
+		}
+        #tutorial{
+            width:1000px;
+			background-color:#e7e8e9;
+			border-style: solid #808080 1px;
+			position:relative;
+			left:800px;
+			margin-left:-400px;
+            line-height:150%;
+            font-size:large;
+        }
+       
+    </style>
+</head>
+<body>
+    <div id="menu">
+        <a href="#1">&nbsp&nbsp&nbsp1.定制游戏内容</a></br></br></br>
+        <a href="#2">&nbsp&nbsp&nbsp2.MP3文件准备</a></br></br></br>
+        <a href="#3">&nbsp&nbsp&nbsp3.乐谱修改教学</a></br></br></br>
+        <a href="#part1">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPart 1</a></br></br></br>
+        <a href="#part2">&nbsp&nbsp&nbsp&nbsp&nbsp&nbspPart 2</a></br></br></br>
+        <a href="#4">&nbsp&nbsp&nbsp4.开始游戏</a></br></br></br>
+    </div>
+    <div id="tutorial">
+		<h2 id="1">1.定制游戏内容</h2>
+        <p>&nbsp&nbsp&nbsp&nbsp为了定制您自己的游戏内容，首先您需要下载我们提供的离线版本的游戏压缩包,</p>
+        <a href="#">&nbsp&nbsp&nbsp&nbsp点击此处下载。</a>
+        <p>&nbsp&nbsp&nbsp&nbsp我们提供的压缩包里有个文件gameOffLine.html</p>
+        <h2 id="2">2.MP3文件准备</h2>
+        <p>&nbsp&nbsp&nbsp&nbsp您需要自行通过网络渠道获得您所需的音乐的mp3文件,将其重命名为src.mp3，并与gameOffLine.html文件放在同一个文件夹下。</p>
+        <h2 id="3">3.乐谱修改</h2>
+            <h3 id="part1">Part 1</h3>
+            <p>&nbsp&nbsp&nbsp&nbsp然后，您只需要对这个游戏的乐谱进行修改，乐谱如下图所示。</p>
+            <img src="./tutorial1.png" alt="error" title="图一" width="800" height="400">
+            <p>&nbsp&nbsp&nbsp&nbsp如图，您首先第一步需要在图一的var bpm=后面把bpm改成自己想要用的数字</p>
+            <a href="https://baike.baidu.com/item/BPM/2815203#viewPageContent" target="_blank">了解bpm</a>
+            <h3 id="part2">Part 2</h3>
+            <p>&nbsp&nbsp&nbsp&nbsp完成上面一步后让我们来到图二和图三，让我们来修改乐谱的主体部分。var score=后面的方括号“[ ]”包起来的部分就是乐谱的主体部分。首先您需要将bpm（超链接链接到百度百科bpm）、speed（代表音符下落速度，单位为一千像素每秒）、duration（代表音乐的总时长，单位为一个32分音符，32分音符的时值将会由您输入的bpm来确定）修改成自己所需的参数。</p>
+            <img src="./tutorial2.png" alt="error"  title="图二" width="800" height="400"></br>
+            <img src="./tutorial3.png" alt="error"  title="图三" width="800" height="400">
+            <p>&nbsp&nbsp&nbsp&nbsp接着，我们就可以开始我们的制作了，让我们把{bpm:111,speed:2,duration:1969}和{end:true}之间的内容删掉，如图四所示</p>
+            <img src="./tutorial4.png" alt="error"  title="图四" width="1000" height="200">
+            <p>&nbsp&nbsp&nbsp&nbsp接着按照以下这个格式往这中间填充内容，请尤其注意要使用英文标点符号</p>
+            <div style="background-color: black; color:white; line-height:200%; font-size: medium;">&nbsp&nbsp&nbsp32,&nbsp&nbsp&nbsp//这是个注释，可以在乐谱里通过两个斜杠添加注释。这个数字32代表延迟时间，单位为一个32分音符。</br>
+                &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//我们可以看到，此处32的意思就是延迟32个32分音符，也就是一个全音符，之后进行下一步操作。</br>
+                &nbsp&nbsp&nbsp{t1:0},&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//在轨道1发射一个音符，从左到右分别为轨道1,2,3,4。</br>
+                &nbsp&nbsp&nbsp 8,&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//延迟8个32分音符，也就是一个四分音符，之后进行下一步操作</br>
+                &nbsp&nbsp&nbsp{t1:0,t2:0},&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//在轨道1和轨道2同时发射一个音符</br>
+                &nbsp&nbsp&nbsp8,&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//延迟8个32分音符，也就是一个四分音符，之后进行下一步操作</br>
+                &nbsp&nbsp&nbsp{t1:0,t2:0,t3:0,t4:0},&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//在轨道1、轨道2、轨道3、轨道4同时发射一个音符</br>
+                &nbsp&nbsp&nbsp8,&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//延迟8个32分音符，也就是一个四分音符，之后进行下一步操作</br>
+                &nbsp&nbsp&nbsp{t1:32},&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//在轨道1发射一个时值为32个32分音符的长音符,</br> 
+                &nbsp&nbsp&nbsp8,&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//延迟8个32分音符，也就是一个四分音符，之后进行下一步操作</br>
+                &nbsp&nbsp&nbsp{t2:64},&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//在轨道2发射一个时长为64分音符的四分音符</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//注意，此时上一次发射的长音符还没有结束,也就是说，在两个轨道同时存在长音符是被允许的</br>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp//但是请您一定要避免出现一个长音符还没结束时就在同一个轨道发射新的音符的情况。</br>
+                </div>
+
+        <h2 id="4">4.开始游戏</h2>
+        <p>&nbsp&nbsp&nbsp&nbsp完成以上工作之后保存，在浏览器中打开gameOffLine文件，即可开始体验您自定义的游戏。</p>
+	</div>
+</body>
+</html>
