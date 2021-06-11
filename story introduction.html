@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Story</title>
+    <style>
+        body{
+			background-color:#808080;
+			width: 1280px;
+		}
+        #randtext{
+            background-color: #c0c0c0;
+            width: 800px;
+			height: 380px;
+			border-style: solid;
+            border-radius:25px;
+			position:fixed;
+			left:25%;
+        }
+        #text1{
+            display:none;
+            width: 700px;
+			height: 380px;
+            margin-left: 50px;
+            margin-top: 50px;
+            line-height: 175%;
+			font-size: large;
+        }
+        #text2{
+            display:none;
+            width: 700px;
+			height: 380px;
+            margin-left: 50px;
+            margin-top: 50px;
+            line-height: 175%;
+			font-size: large;
+        }
+        #text3{
+            display:none;
+            width: 700px;
+			height: 380px;
+            margin-left: 50px;
+            margin-top: 50px;
+            line-height: 175%;
+			font-size: large;
+        }
+        #skipbutton{
+            width:100px;
+            height:50px;
+            position:fixed;
+            right:22%;
+            top:420px;
+        }
+    </style>
+    <style type="text/css">
+		#jin{
+			height: 860px;
+			width: 680px;
+            position:fixed;
+            left:25%;
+            
+		}
+		
+	</style>
+</head>
+<body>
+    <div id="randtext">
+        <p id="text1">&nbsp;&nbsp;&nbsp;&nbsp;平面国是一个二维空间中的国家，其国民都是不同边数的几何体。
+            在这个国家里，边数越高，身份地位也就越高。三角形由于边数少而处于社会底层。
+            有一天，一个未知的力量告知他说只要你能通过一系列试炼，便能增加一个维度，凌驾于平面国所有人之上。
+            三角形不知道增加一个维度意味着什么。不过，出于对压迫的不满以及出人头地的渴望，他踏上了这个艰险的旅途……</p>
+        <p id="text2">&nbsp;&nbsp;&nbsp;&nbsp;bgyibbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb</p>
+        <p id="text3">&nbsp;&nbsp;&nbsp;&nbsp;6666666666666666666666666666666666666666666</p>
+    </div>
+    <script>
+        var text = "story";
+        switch(Math.floor(Math.random() * 2)){
+            case 0: 
+                document.getElementById('text1').style.display = "block";
+                break;
+            case 1: 
+                document.getElementById('text2').style.display = "block";
+                break;
+            case 2:
+                document.getElementById('text3').style.display = "block";
+                break;
+        }
+    </script>
+    <progress max="100" value="0"  id="jin" )></progress>
+
+	<script type="text/javascript">
+		var jin=document.getElementById('jin');
+			setInterval(function(e){
+			if(jin.value!=100) jin.value++;    
+			else window.location.replace("#");
+			},100);
+	</script>
+    <a href="#"><button id="skipbutton">skip</button></a>
+</body>
+</html>
